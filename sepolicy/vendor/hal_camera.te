@@ -1,6 +1,7 @@
 hal_client_domain(hal_camera_default, hal_graphics_allocator)
 hal_client_domain(hal_camera_default, hal_graphics_composer)
 hal_client_domain(hal_camera_default, vendor_hal_hexlp)
+hal_client_domain(hal_camera_default, vendor_hal_qspmhal)
 hal_client_domain(hal_camera_default, vendor_hal_vpp)
 
 add_service(hal_camera_server, vendor_hal_camera_aon_service)
@@ -55,6 +56,7 @@ allow hal_camera_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_pe
 allow hal_camera_default vendor_dmabuf_system_heap_device:chr_file r_file_perms;
 allow hal_camera_default vendor_dmabuf_user_contig_heap_device:chr_file r_file_perms;
 allow hal_camera_default vendor_membuf_dev:chr_file r_file_perms;
+allow hal_camera_default vendor_hal_qspmhal_default:binder { call transfer };
 allow hal_camera_default vendor_qdsp_device:chr_file r_file_perms;
 allow hal_camera_default vendor_sys_nonsp_comp:file r_file_perms;
 allow hal_camera_default vendor_sys_sp_comp:file r_file_perms;
@@ -64,6 +66,7 @@ allow hal_camera_default vendor_sysfs_camera:file r_file_perms;
 allow hal_camera_default vendor_vm_cp_non_pixel_device:chr_file r_file_perms;
 allow hal_camera_default vendor_vm_cp_pixel_device:chr_file r_file_perms;
 allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
+allow vendor_hal_qspmhal_default hal_camera_default:binder transfer;
 
 allowxperm hal_camera self:qipcrtr_socket ioctl { 0xc300-0xc305 };
 allowxperm hal_camera_default vendor_dmabuf_display_heap_device:chr_file ioctl SNDRV_HWDEP_IOCTL_PVERSION;
