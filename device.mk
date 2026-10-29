@@ -143,9 +143,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8450-6.6/display/hal/config/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml
 
-# Dolby
-PRODUCT_PACKAGES += \
-    DolbyAtmos
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -460,3 +457,6 @@ $(call inherit-product, vendor/xiaomi/kunzite/kunzite-vendor.mk)
 
 # Vendor MiuiCamera
 $(call inherit-product-if-exists, device/xiaomi/kunzite-miuicamera/device.mk)
+
+# Keys
+$(call inherit-product, vendor/private/keys/keys.mk)

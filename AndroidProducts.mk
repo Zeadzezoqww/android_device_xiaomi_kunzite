@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/custom_kunzite.mk
+    $(LOCAL_DIR)/halcyon_kunzite.mk
